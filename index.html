@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>Array methods</caption>
+        <tr>
+            <th>Method</th>
+            <th>Operation</th>
+            <th>Return Value</th>
+            <th>Example</th>
+            <th>Output</th>
+        </tr>
+
+        <tr>
+            <th>push()</th>
+            <td>Add one or more elements at the end of the array</td>
+            <td>Returns the length of the array after push</td>
+            <td>const arr = [1, 2, "hai", true];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.push(2, false, "hello");<br>
+                document.write("array after push is" + arr);<br>
+                document.write("return value is " + b);<br></td>
+            <td>input array is 1,2,hai,true<br>
+                array after push 1,2,hai,true,2,false,hello<br>
+                return value is 7<br></td>
+
+        </tr>
+
+        <tr>
+            <th>unshift()</th>
+            <td>Add one or more elements at the start of the array</td>
+            <td>Returns the length of the array after push</td>
+            <td>const arr = [1, 2, "hai", true];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.unshift(-2, false, "hello");<br>
+                document.write("array after unshift is " + arr);<br>
+                document.write("return value is " + b);<br></td>
+            <td>input array is 1,2,hai,true<br>
+                array after unshift is -2,false,hello,1,2,hai,true<br>
+                return value is 7<br></td>
+
+        </tr>
+
+        <tr>
+            <th rowspan="3">pop()</th>
+            <td rowspan="3">Remove the last element in an array</td>
+            <td rowspan="3">Returns the removed element</td>
+            <td>const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.pop();<br>
+                document.write("array after using pop is " + arr);<br>
+                document.write("return value is " + b);<br></td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using pop is 1,2,hai,true<br>
+                return value is hello<br></td>
+
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.pop(2);<br>
+                document.write("array after using pop is " + arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using pop is 1,2,hai,true<br>
+                return value is hello<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.pop();<br>
+                const c = arr.pop();<br>
+                document.write("array after using pop is " + arr);<br>
+                document.write("return value b is " + b);<br>
+                document.write("return value c is " + c);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using pop is 1,2,hai<br>
+                return value b is hello<br>
+                return value c is true<br></td>
+        </tr>
+
+        <tr>
+            <th rowspan="3">shift()</th>
+            <td rowspan="3">Remove the first element in an array</td>
+            <td rowspan="3">Returns the removed element</td>
+            <td>const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.shift();<br>
+                document.write("array after using shift is " + arr);<br>
+                document.write("return value is " + b);<br></td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using shift is 2,hai,true,hello<br>
+                return value is 1<br></td>
+
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.shift(2);<br>
+                document.write("array after using shift is " + arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using shift is 2,hai,true,hello<br>
+                return value is 1<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.shift();<br>
+                const c = arr.shift();<br>
+                document.write("array after using shift is " + arr);<br>
+                document.write("return value b is " + b);<br>
+                document.write("return value c is " + c);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using shift is hai,true,hello<br>
+                return value b is 1<br>
+                return value c is 2<br></td>
+        </tr>
+
+        <tr>
+            <th rowspan="7">splice()</th>
+            <td rowspan="7">Alters the array (add or remove element)<br>
+                (index,number of elements to be deleted,inserting element)</td>
+            <td rowspan="7">Returns the removed or spliced out element</td>
+            <td>const arr = [1, 2, "hai", true, "hello", 100, false];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.splice(2, 3, "car");<br>
+                document.write("array after using splice is " + arr);<br>
+                document.write("return value is " + b);<br></td>
+            <td>input array is 1,2,hai,true,hello,100,false<br>
+                array after using splice is 1,2,car,100,false<br>
+                return value is hai,true,hello<br></td>
+
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.splice(1, "hello", "car", 3, "fab");<br>
+                document.write("array after using splice is " + arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using splice is 1,car,3,fab,2,hai,true,hello<br>
+                return value is<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.splice(3,-2, "car", 3, "fab");<br>
+                document.write("array after using splice is "+ arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using splice is 1,2,hai,car,3,fab,true,hello<br>
+                return value is<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.splice(3, 0, "car", 3, "fab");<br>
+                document.write("array after using splice is " + arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using splice is 1,2,hai,car,3,fab,true,hello<br>
+                return value is<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.splice(3, 1, "car", 3, "fab");<br>
+                const c = arr.splice(3, 1, "car", 3, "fab");<br>
+                document.write("array after using splice is " + arr);<br>
+                document.write("return value b is " + b, "return value c is " + c);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using splice is 1,2,hai,car,3,fab,3,fab,hello<br>
+                return value b is true<br>
+                return value c is car<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello", 90, 87];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.splice(-5, 3, "head");<br>
+                document.write("array after using splice is " + arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello,90,87<br>
+                array after using splice is 1,2,head,90,87<br>
+                return value is hai,true,hello<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello"];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.splice(1);<br>
+                document.write("array after using splice is " + arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello<br>
+                array after using splice is 1<br>
+                return value is 2,hai,true,hello<br></td>
+        </tr>
+
+        <tr>
+            <th rowspan="5">slice()</th>
+            <td rowspan="5">Slice off or remove element from the array without affecting it <br>
+                (index 1(included),index 2(not included))</td>
+            <td rowspan="5">Returns the removed element in a new array and input array remains same</td>
+            <td>const arr = [1, 2, "hai", true, "hello", 90, 87];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.slice(1, 4);<br>
+                document.write("array after using slice is " + arr);<br>
+                document.write("return value is " + b);<br></td>
+            <td>input array is 1,2,hai,true,hello,90,87<br>
+                array after using slice is 1,2,hai,true,hello,90,87<br>
+                return value is 2,hai,true<br></td>
+
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello", 90, 87];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.slice(3, -1);<br>
+                document.write("array after using slice is " + arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello,90,87<br>
+                array after using slice is 1,2,hai,true,hello,90,87<br>
+                return value is true,hello,90<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello", 90, 87];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.slice(-3, -1);<br>
+                const c = arr.slice(2, 5);<br>
+                document.write("array after using slice is " + arr);<br>
+                document.write("return value b is " + b, "return value c is " + c);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello,90,87<br>
+                array after using slice is 1,2,hai,true,hello,90,87<br>
+                return value b is hello,90<br>
+                return value c is hai,true,hello<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello", 90, 87];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.slice(3);<br>
+                document.write("array after using slice is " + arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello,90,87<br>
+                array after using slice is 1,2,hai,true,hello,90,87<br>
+                return value is true,hello,90,87<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const arr = [1, 2, "hai", true, "hello", 90, 87];<br>
+                document.write("input array is " + arr);<br>
+                const b = arr.slice(3, 1);<br>
+                document.write("array after using slice is " + arr);<br>
+                document.write("return value is " + b);<br>
+            </td>
+            <td>input array is 1,2,hai,true,hello,90,87<br>
+                array after using slice is 1,2,hai,true,hello,90,87<br>
+                return value is<br></td>
+        </tr>
+
+        <tr>
+            <th rowspan="3">concat()</th>
+            <td rowspan="3">Combine two arrays without affecting input arrays</td>
+            <td rowspan="3">Returns the combined array</td>
+            <td>const a = [1, 2, "hai", true, "hello", 90, 87];<br>
+                const b = [2, 3, 4, 5];<br>
+                const c = ["hai", 78, 902,];<br>
+                const d = a.concat(a, c);<br>
+                document.write( "input array a is " + a, "input array b is " + b, <br>"input array c is " + c, "combined
+                array a is " + d);<br></td>
+            <td>input array a is 1,2,hai,true,hello,90,87<br>
+                input array b is 2,3,4,5<br>
+                input array c is hai,78,902<br>
+                combined array a is 1,2,hai,true,hello,90,87,1,2,hai,true,hello,90,87,<br>hai,78,902<br>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                const a = [1, 2, "hai", true, "hello", 90, 87];<br>
+                const b = [2, 3, 4, 5];<br>
+                const c = ["hai", 78, 902,];<br>
+                const d = a.concat(b, c);<br>
+                document.write( "input array a is " + a, "input array b is " + b, <br>"input array c is " + c, "combined
+                array a is " + d);<br>
+            </td>
+            <td>input array a is 1,2,hai,true,hello,90,87<br>
+                input array b is 2,3,4,5<br>
+                input array c is hai,78,902<br>
+                combined array d is 1,2,hai,true,hello,90,87,2,3,4,5,hai,78,902<br></td>
+        </tr>
+
+        <tr>
+            <td>
+                const a = [1, 2, "hai", true, "hello", 90, 87];<br>
+                const b = [2, 3, 4, 5];<br>
+                const c = ["hai", 78, 902,];<br>
+                const d = b.concat(a, c);<br>
+                document.write( "input array a is " + a, "input array b is " + b, <br>"input array c is " + c, "combined
+                array a is " + d);<br>
+            </td>
+            <td>input array a is 1,2,hai,true,hello,90,87<br>
+                input array b is 2,3,4,5<br>
+                input array c is hai,78,902<br>
+                combined array d is 2,3,4,5,1,2,hai,true,hello,90,87,hai,78,902<br>
+            </td>
+        </tr>
+
+        <tr>
+            <th>indexOf()</th>
+            <td>To find the index number of a element in an array</td>
+            <td>Index number</td>
+            <td>const a = [1, 2, "hai", true, "hello", 90, 87];<br>
+                const b = a.indexOf("hai");<br>
+                document.write("input array is " + a);<br>
+                document.write("index value of hai is " +b);<br></td>
+            <td>input array is 1,2,hai,true,hello,90,87<br>
+                index value of hai is <br></td>
+
+        </tr>
+
+        <tr>
+            <th rowspan="2">includes()</th>
+            <td rowspan="2">To find whether the element is present or not</td>
+            <td rowspan="2">Returns true if present and false if not</td>
+            <td>const a = [1, 2, "hai", true, "hello", 90, 87];<br>
+                const b = a.includes("hai");<br>
+                document.write("input array is " + a);<br>
+                document.write("return value is " + b);<br></td>
+            <td>input array is 1,2,hai,true,hello,90,87<br>
+                return value is true<br>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>const a = [1, 2, "hai", true, "hello", 90, 87];<br>
+                const b = a.includes("hai", 5);<br>
+                document.write("input array is " + a);<br>
+                document.write("return value is "+b);<br></td>
+            <td>input array is 1,2,hai,true,hello,90,87<br>
+                return value is false <br></td>
+
+        </tr>
+
+
+
+
+
+    </table>
+</body>
+
+</html>
